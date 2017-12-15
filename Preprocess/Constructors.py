@@ -31,13 +31,13 @@ class NetworkConstructor(object):
         with open(path, "r") as input_file:
             for line in tqdm(input_file.readlines()):
                 raw = line.split()
-                if raw[-1] != "RT": continue
-                source, target, time = map(int, raw[:-1])
+                # if raw[-1] != "RT": continue
+                source, target, time = map(int, raw)
                 self.graph.add_edge(source, target, time=self.__norm(time))
 
         if dangling:
             nodes = list(self.graph.nodes())
-            for source in self.graph.nodes():
+            for source in tqdm(self.graph.nodes()):
                 if self.graph.out_degree(source) == 0:
                     self.graph.add_edges_from(zip([source]*len(nodes), nodes), time=0)
 
@@ -82,16 +82,22 @@ def interval_constructor(iterable_dict):
 
 if __name__ == "__main__":
 
-    file_path = path_constructor("data/higgs-activity_time.txt")
-    graph = NetworkConstructor(file_path, dangling=False).construct()
-
-    print("{0:<10} Edges and {1:<10} Nodes.".format(graph.number_of_edges(), graph.number_of_nodes()))
-
-    largest_weakly_connected_component = max(nx.strongly_connected_component_subgraphs(graph), key=len)
-
-    with open(path_constructor("data/higgs-activity_time_lwcc.txt"), "w+") as output_file:
-        for edge in tqdm(largest_weakly_connected_component.edges(data='time')):
-            output_file.write("{0} {1} {2}\n".format(*edge))
+    # file_path = path_constructor("data/higgs-activity_time.txt")
+    # graph = NetworkConstructor(file_path, dangling=False, normalization=1, min_time=0).construct()
+    #
+    # print("{0:<10} Edges and {1:<10} Nodes.".format(graph.number_of_edges(), graph.number_of_nodes()))
+    #
+    # largest_connected_component = nx.Graph()
+    #
+    # for subgraph in tqdm(nx.strongly_connected_component_subgraphs(graph, copy=False), total=nx.number_strongly_connected_components(graph)):
+    #     if len(subgraph) > len(largest_connected_component):
+    #         largest_connected_component = subgraph
+    #     if len(subgraph) == 984:
+    #         break
+    #
+    # with open(path_constructor("data/higgs-activity_time_lcc.txt"), "w+") as output_file:
+    #     for edge in tqdm(largest_connected_component.edges(data='time')):
+    #         output_file.write("{0} {1} {2}\n".format(*edge))
 
 
     pass

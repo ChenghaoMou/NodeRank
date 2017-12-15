@@ -100,9 +100,9 @@ class NodeRank(object):
 
 
 if __name__ == "__main__":
-    dissemination_file_path = path_constructor("data/email-Eu-core-temporal-Dept1.txt")
-    dissemination_graph = NetworkConstructor(dissemination_file_path, normalization=1, min_time=0,
-                                             ignore_time=False).construct()
+    dissemination_file_path = path_constructor("data/higgs-activity_time_lcc.txt")
+    dissemination_graph = NetworkConstructor(dissemination_file_path, normalization=360, min_time=1341100972,
+                                             ignore_time=True, dangling=True).construct()
     print("Finished Construction...")
     rank = NodeRank(relation_network=None, dissemination_network=dissemination_graph)
     rank.initialize()
