@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -50,6 +51,8 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 ### Python template
+=======
+>>>>>>> 15a92b7b0ef76820686abed2bbf556c5c9f9a269
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -60,6 +63,10 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+<<<<<<< HEAD
+=======
+env/
+>>>>>>> 15a92b7b0ef76820686abed2bbf556c5c9f9a269
 build/
 develop-eggs/
 dist/
@@ -75,7 +82,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+<<<<<<< HEAD
 MANIFEST
+=======
+>>>>>>> 15a92b7b0ef76820686abed2bbf556c5c9f9a269
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -104,8 +114,11 @@ coverage.xml
 
 # Django stuff:
 *.log
+<<<<<<< HEAD
 .static_storage/
 .media/
+=======
+>>>>>>> 15a92b7b0ef76820686abed2bbf556c5c9f9a269
 local_settings.py
 
 # Flask stuff:
@@ -133,6 +146,7 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
+<<<<<<< HEAD
 # Environments
 .env
 .venv
@@ -141,6 +155,15 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+=======
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+>>>>>>> 15a92b7b0ef76820686abed2bbf556c5c9f9a269
 
 # Spyder project settings
 .spyderproject
@@ -154,5 +177,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+<<<<<<< HEAD
 
 /data/higgs-social_network.txt
+=======
+>>>>>>> 15a92b7b0ef76820686abed2bbf556c5c9f9a269
